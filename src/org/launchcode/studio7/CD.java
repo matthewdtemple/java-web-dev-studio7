@@ -24,6 +24,7 @@ private String title;
 
         CD cd1 = new CD("Bruno Jupiter", 350, 200, 500);
         cd1.spinDisc();
+        cd1.loadDisc();
         System.out.println("se llama " + cd1.getTitle());
 
     }
