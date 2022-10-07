@@ -2,26 +2,29 @@ package org.launchcode.studio7;
 
 public class CD extends BaseDisc implements OpticalDisc {
 
-private int speedRPM = 500;
 private String title;
 
-    public CD(String title) {
-        super(title);
+    public CD(String title, Integer storage, Integer minRPM, Integer maxRPM) {
+        super(storage, minRPM, maxRPM);
+        this.title = title;
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void spinDisc(){
-    System.out.println("It spins at " + speedRPM + " RPM");
+    System.out.println("It spins between " + this.getMinRPM() + " - " + this.getMaxRPM() + " RPM");
 }
+
+    public void loadDisc(){System.out.println((getTitle() + " has been loaded!"));}
 
     public static void main(String[] args){
         System.out.println();
 
-        CD cd1 = new CD("Test Title");
+        CD cd1 = new CD("Bruno Jupiter", 350, 200, 500);
         cd1.spinDisc();
+        System.out.println("se llama " + cd1.getTitle());
 
     }
 
